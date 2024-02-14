@@ -1,0 +1,138 @@
+#animationBox1 {
+    width: 250px;
+    height: 250px;
+    background: hotpink;
+    font-size: 65px;
+    text-align: center;
+    border: 5px solid green;
+
+    /* real fun begins now */
+    /* animation: myslide;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    animation-duration: 3s; */
+
+    /**
+        => animation combines the following in SIGNLE LINE:
+
+        animation-duration,
+        animation-timing-function,
+        animation-delay,
+        animation-iteration-count,
+        animation-play-state,
+        animation
+
+    */
+
+    /**
+
+        📌ALL TYPE OF ANIMATIONS ARE PLACED HERE 📌
+
+    */
+    /* animation: 2s linear 0s infinite running myslide; */
+    animation: 5s linear 0s infinite running myRotate;
+    /* animation: 1s linear 0s infinite running myOpacity; */
+    /* animation: 2s linear 0s infinite running myScale; */
+    /* animation: 4s linear 0s infinite running myColorChange; */
+
+}
+
+#animationBox1:hover {
+    /* animation: 2s ease-in-out 1s infinite running myslide; */
+}
+
+/**
+SLIDE type animation : right to left
+*/
+@keyframes myslide {
+    from {
+        margin-left: 100%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+
+}
+
+#animationBox1:active {
+    /* animation: 2s linear 0s infinite running myslide_OnClick; */
+}
+
+
+/**
+SLIDE type animation : left to right
+*/
+@keyframes myslide_OnClick {
+    from {
+        margin-left: 0%;
+    }
+
+    to {
+        margin-left: 100%;
+    }
+}
+
+/**
+ROTATE your element
+*/
+@keyframes myRotate {
+    100% {
+        /* transform: rotateX(360deg); */
+        /* transform: rotateY(90deg); */
+        transform: rotateZ(360deg);
+    }
+}
+
+/**
+Change OPACITY in middle of animation
+*/
+@keyframes myOpacity {
+    50% {
+        opacity: 0;
+    }
+}
+
+/**
+SHRINK using Scale in middle of animation
+*/
+@keyframes myScale {
+    50% {
+        transform: scale(0.5, 0.5);
+    }
+}
+
+/**
+change Colors at diff times (It will look like rainbow 😊)
+*/
+@keyframes myColorChange {
+    0% {
+        background-color: red;
+    }
+
+    20% {
+        background-color: orange;
+    }
+
+    40% {
+        background-color: yellow;
+    }
+
+    60% {
+        background-color: green;
+    }
+
+    80% {
+        background-color: blue;
+    }
+
+    90% {
+        background-color: indigo;
+    }
+
+    100% {
+        background-color: purple;
+    }
+}

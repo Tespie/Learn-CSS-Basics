@@ -1,0 +1,31 @@
+body {
+    background-image: url("images/mybg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    object-fit: fill;
+    /* margin: 50em;
+    min-width: 500px; */
+
+    /* object-fit: scale-down; */
+    /* background: linear-gradient(#004a7c, #018333); */
+    /* background: linear-gradient(to top, #004a7c, #018333);
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+
+
+
+}
+
+h1 {
+    background: linear-gradient(to right, #004a7c, #018333);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+p {
+    background: linear-gradient(to left, #004a7c, #018333);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

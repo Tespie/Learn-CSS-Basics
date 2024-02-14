@@ -1,0 +1,23 @@
+h2 {
+    text-shadow: -5px -5px 3px red;
+}
+
+h3 {
+    text-shadow: 5px 15px 6px green;
+}
+
+h4 {
+    text-shadow: 0px 0px 5px yellow, 0px -5px 5px blue;
+}
+
+.h2shadows {
+    /* text-shadow: none */
+}
+
+.h5shadows {
+    text-shadow: 0px 0px 5px darkmagenta, 0px -5px 2px skyblue;
+}
+
+.h5shadows:hover {
+    box-shadow: 5px 5px 10px black;
+}

@@ -1,0 +1,49 @@
+a:link {
+    color: green;
+    /* font-family: 'Press Start 2P'; */
+}
+
+a:visited {
+    color: blueviolet
+}
+
+a:hover {
+    color: pink;
+}
+
+a:active {
+    color: yellow;
+}
+
+button:hover {
+    background-color: red;
+}
+
+button:active {
+    background-color: yellow;
+}
+
+li:nth-child(5) {
+    background-color: yellow;
+}
+
+
+/* li:nth-child(odd) {
+    background-color: gray;
+}
+li:nth-child(even) {
+    background-color: goldenrod;
+} */
+li:nth-child(2n) {
+    background-color: gray;
+    /* background-color: white; */
+}
+
+li:nth-child(4n) {
+    background-color: darkgray;
+    /* background-color: white; */
+}
+
+li:nth-child(5n+2) {
+    background-color: cyan;
+}

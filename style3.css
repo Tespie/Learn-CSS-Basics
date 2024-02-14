@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+    background-color: gray;
+}
+
+#p1 {
+    /* color: teal; */
+}
+
+#p2 {
+    /* color: blue; */
+}
+
+#p3 {
+    /* color: greenyellow; */
+}
+
+#p4 {
+    /* color: black; */
+}
+
+.odd {
+    color: red
+}
+
+.even {
+    color: darkolivegreen
+}
