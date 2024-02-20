@@ -1,0 +1,42 @@
+body {
+    color: red;
+}
+
+.title {
+    font-size: 6rem;
+}
+
+.subtitle {
+    font-size: 4rem;
+}
+
+/**
+* max-width : 500px == width < 500px
+* min-width : 500px == width > 500px
+*/
+
+/* @media (width < 500px) { */
+@media (max-width : 500px) {
+    body {
+        color: blue;
+    }
+}
+
+@media (orientation : landscape) and (width < 500px) {
+    .title {
+        color: green
+    }
+}
+
+@media (orientation : portrait),
+(width > 500px) {
+    .subtitle {
+        color: magenta
+    }
+}
+
+@media print {
+    body {
+        color: cyan
+    }
+}
