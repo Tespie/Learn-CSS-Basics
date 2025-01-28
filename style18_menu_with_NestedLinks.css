@@ -1,0 +1,128 @@
+
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* justify-content: space-between; */
+  }
+  
+  nav li {
+    position: relative;
+    margin-right: 30px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #ccc;
+  }
+  
+  /* Menu Styles */
+  
+  .menu {
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+  }
+  
+  .menu li {
+    margin-right: 30px; /* Increased margin between menu items */
+  }
+  
+  .menu a {
+    display: block;
+    padding: 15px 20px; /* Increased padding for menu items */
+  }
+  
+  /* Submenu Styles */
+  
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 15px; /* Increased padding for submenus */
+    border-radius: 0 0 5px 5px;
+    display: none;
+    z-index: 1;
+    min-width: 150px; /* Set minimum width for submenus */
+  }
+  
+  .submenu li {
+    margin-right: 0;
+    margin-bottom: 15px; /* Increased margin between submenu items */
+  }
+  
+  .submenu a {
+    display: block;
+    padding: 10px 15px;
+    width: 100%; /* Set width to 100% for submenu items */
+  }
+  
+  .submenu a:hover {
+    background-color: #444;
+  }
+  
+  /* Show Submenu on Hover */
+  
+  .menu li:hover .submenu {
+    display: block;
+  }
+  
+  /* Nested Submenu Styles */
+  
+  .submenu .submenu {
+    top: 0;
+    left: 100%;
+    border-radius: 5px 0 5px 5px;
+    padding: 15px; /* Increased padding for nested submenus */
+  }
+  
+  .submenu .submenu li {
+    margin-bottom: 15px; /* Increased margin between nested submenu items */
+  }
+  
+  .submenu .submenu a {
+    width: 100%; /* Set width to 100% for nested submenu items */
+  }
+  
+  /* Hide "Our Services" submenu by default */
+/* .menu li ul.submenu { */
+.menu li ul.submenu li ul.submenu {
+    display: none;
+  }
+  
+  /* Show "Our Services" submenu when "About Us" is hovered */
+  .menu li ul.submenu li:hover > ul.submenu {
+    display: block;
+  }
+  
