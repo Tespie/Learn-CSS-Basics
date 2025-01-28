@@ -1,120 +1,88 @@
+/* Define CSS variables */
+:root {
+    --bg-color: #3b00c4;
+    --hover-bg-color: #d817ce;
+    --submenu-bg-color: #64098f;
+    --text-color: white;
+    --padding: 15px 20px;
+}
 
-/* Global Styles */
 
+/* Reset default browser styles */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
+}
+
+body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-  }
-  
-  nav {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navigation menu styles */
+nav {
+    background-color: var(--bg-color);
+}
+
+.menu {
+    list-style-type: none;
     display: flex;
-    /* justify-content: space-between; */
-  }
-  
-  nav li {
+    padding: 10px;
+}
+
+.menu > li {
     position: relative;
-    margin-right: 30px;
-  }
-  
-  nav a {
-    color: #fff;
+}
+
+.menu > li > a {
+    color: white;
     text-decoration: none;
-    transition: color 0.5s ease-in-out;
-  }
-  
-  nav a:hover {
-    color: #ccc;
-  }
-  
-  /* Menu Styles */
-  
-  .menu {
-    margin: 0;
-    padding: 0;
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
-  }
-  
-  .menu li {
-    margin-right: 30px; /* Increased margin between menu items */
-  }
-  
-  .menu a {
+    padding: 15px 20px;
     display: block;
-    padding: 15px 20px; /* Increased padding for menu items */
-  }
-  
-  /* Submenu Styles */
-  
-  .submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #333;
-    padding: 15px; /* Increased padding for submenus */
-    border-radius: 0 0 5px 5px;
+}
+
+.menu > li > a:hover {
+    background-color: var(--hover-bg-color);
+}
+
+/* Submenu styles */
+.submenu {
     display: none;
-    z-index: 1;
-    min-width: 150px; /* Set minimum width for submenus */
-  }
-  
-  .submenu li {
-    margin-right: 0;
-    margin-bottom: 15px; /* Increased margin between submenu items */
-  }
-  
-  .submenu a {
+    position: absolute;
+    background-color: var(--submenu-bg-color);
+    list-style-type: none;
+    padding: 10px 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.submenu li {
+    position: relative; /* Ensure submenu items are positioned correctly */
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
     display: block;
-    padding: 10px 15px;
-    width: 100%; /* Set width to 100% for submenu items */
-  }
-  
-  .submenu a:hover {
-    background-color: #444;
-  }
-  
-  /* Show Submenu on Hover */
-  
-  .menu li:hover .submenu {
+}
+
+.submenu li a:hover {
+    background-color: var(--hover-bg-color);
+}
+
+/* Show submenu on hover */
+.menu > li:hover .submenu {
     display: block;
-  }
-  
-  /* Nested Submenu Styles */
-  
-  .submenu .submenu {
-    top: 0;
-    left: 100%;
-    border-radius: 5px 0 5px 5px;
-    padding: 15px; /* Increased padding for nested submenus */
-  }
-  
-  .submenu .submenu li {
-    margin-bottom: 15px; /* Increased margin between nested submenu items */
-  }
-  
-  .submenu .submenu a {
-    width: 100%; /* Set width to 100% for nested submenu items */
-  }
-  
+}
+
+/* Additional styles for nested submenus */
+.submenu .submenu {
+    left: 100%; /* Position nested submenu to the right */
+    top: 0; /* Align with the parent menu item */
+}
+
   /* Hide "Our Services" submenu by default */
 /* .menu li ul.submenu { */
 .menu li ul.submenu li ul.submenu {
