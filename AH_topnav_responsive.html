@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AH Top Nav - POC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+
+    <style>
+        .fa-chevron-down,
+        .fa-chevron-up {
+            width: 20px;
+            height: 20px;
+        }
+
+        a.active {
+            background-color: white;
+            color: #33a8eb !important;
+        }
+
+        .userprofile-text {
+            .userprofile-person {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 21px;
+                /* 150% */
+
+            }
+
+            .userprofile-role {
+                text-align: left;
+                font-size: 10px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 15px;
+            }
+        }
+
+        div.userprofile-name {
+            padding: 10px;
+            border-radius: 100px;
+            background-color: gray;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        img.userprofile-img {
+            width: 34px;
+            border-radius: 100px;
+            background-color: gray;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        div.dropdown>ul.dropdown-menu {
+            left: unset;
+            right: 0;
+        }
+
+        div.dropdown-menu {
+            width: max-content;
+            position: absolute;
+            left: unset !important;
+            right: -5%;
+        }
+
+        .user-profile-button {
+            padding: 0 15px;
+            border-width: 0;
+            color: #fff !important;
+        }
+
+        nav {
+            background-color: #33a8eb !important;
+        }
+
+        .nav-link {
+            color: #fff;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        .nav-icon {
+            display: inline-block;
+            width: 15px;
+        }
+
+        a.nav-link {
+            border-radius: 7px 7px 0 0;
+        }
+
+        div.user-profile-dd.dropup {
+            display: none;
+        }
+
+        div.user-profile-dd {
+            .dropdown-toggle {
+                color: #fff;
+            }
+
+            .dropdown-toggle:focus {
+                color: #fff;
+            }
+        }
+
+        .navbar-toggler {
+            color: #fff;
+            border: none !important;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        div.offcanvas-body {
+            background-color: #33a8eb !important;
+
+            ul.navbar-nav {
+                margin-bottom: -2px !important;
+
+
+                li.nav-item {
+
+                    a.nav-link {
+                        span.nav-link-text {}
+                    }
+                }
+            }
+        }
+
+        .configure-dd {
+            .configure-dd-container {
+                div.col {
+                    a {
+                        text-wrap: wrap;
+                    }
+                }
+            }
+        }
+
+        .configure-dd-items:hover {
+            background-color: #00000023;
+        }
+
+        .configure-icon-container {
+            padding: 20px;
+            background-color: #fff;
+            color: #33a8eb;
+            border-radius: 4px;
+        }
+
+        .offcanvas-header {
+            background-color: #33a8eb;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #fff;
+            color: #fff;
+            font-size: larger;
+        }
+
+
+        /* Laptop */
+        /* Tablet */
+        /* Phone */
+
+        /* Styles for extra small devices (up to 479px) */
+        @media only screen and (min-width: 300px) and (max-width: 575px) {
+            div.dropdown-menu {
+                width: 93vw !important;
+            }
+
+            .offcanvas-end {
+                width: 100vw !important;
+            }
+
+            a.nav-link {
+                padding: 10px 7px;
+            }
+
+            .configure-item-description {
+                text-wrap: wrap;
+            }
+
+            a.active {
+                box-shadow: 0 0 4px white;
+                border-radius: 4px;
+                color: #fff !important;
+                background-color: unset;
+            }
+
+
+            div.offcanvas-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between !important;
+
+                ul.navbar-nav {
+                    margin: 0 !important;
+
+                    li.nav-item {
+                        a.nav-link {
+                            span.nav-link-text {
+                                /* display: none; */
+                            }
+                        }
+                    }
+                }
+
+                div.user-profile-dd.dropdown {
+                    display: none;
+                }
+
+                div.user-profile-dd.dropup {
+                    display: block;
+                }
+            }
+        }
+
+        /* Styles for small devices (480px to 639px) */
+        @media only screen and (min-width: 576px) and (max-width: 639px) {
+            div.dropdown-menu {
+                width: fit-content !important;
+            }
+
+            a.nav-link {
+                padding: 10px 7px;
+            }
+
+            .configure-item-description {
+                text-wrap: wrap;
+            }
+
+            /* div.navbar-collapse { */
+            div.offcanvas-body {
+                ul.navbar-nav {
+                    margin-left: auto !important;
+                    margin-right: 25px !important;
+                    margin-bottom: -2px !important;
+
+                    li.nav-item {
+                        a.nav-link {
+                            span.nav-link-text {
+                                display: none;
+                            }
+                        }
+                    }
+
+                }
+
+                .userprofile-text {
+                    display: none;
+                }
+            }
+
+        }
+
+        /* Styles for screens from 640px to 767px (Tablet) */
+        @media only screen and (min-width: 640px) and (max-width: 767px) {
+            div.dropdown-menu {
+                width: fit-content;
+            }
+
+            /* div.navbar-collapse { */
+            div.offcanvas-body {
+                ul.navbar-nav {
+                    margin-left: auto !important;
+                    margin-right: 25px !important;
+                    margin-bottom: -2px !important;
+
+                    li.nav-item {
+                        a.nav-link {
+                            span.nav-link-text {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .userprofile-text {
+                display: none;
+            }
+        }
+
+        /* Styles for screens from 768px to 1023px (Small Desktop) */
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+            div.dropdown-menu {
+                width: fit-content;
+            }
+
+            /* div.navbar-collapse { */
+            div.offcanvas-body {
+                ul.navbar-nav {
+                    margin-left: auto !important;
+                    margin-right: 25px !important;
+                    margin-bottom: -2px !important;
+
+                    li.nav-item {
+                        a.nav-link {
+                            span.nav-link-text {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .userprofile-text {
+                    display: none;
+                }
+            }
+        }
+
+        /* Styles for screens from 1024px to 1279px (Large Desktop) */
+        @media only screen and (min-width: 1024px) and (max-width: 1114px) {
+
+            /* div.navbar-collapse { */
+            div.offcanvas-body {
+                ul.navbar-nav {
+                    margin-left: auto !important;
+                    margin-right: 25px !important;
+                    margin-bottom: -2px !important;
+
+                    li.nav-item {
+                        a.nav-link {
+                            span.nav-link-text {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .userprofile-text {
+                display: none;
+            }
+
+            div.dropdown-menu {
+                width: max-content;
+                position: absolute;
+                left: unset !important;
+                right: -47px !important;
+            }
+        }
+
+        /* Styles for screens 1280px and above (Extra Large Desktop) */
+        /* @media only screen and (min-width: 1280px) {} */
+
+        @media only screen and (min-width: 1115px) and (max-width: 1200px) {
+            div.offcanvas-body {
+                ul.navbar-nav {
+                    margin-right: auto;
+
+                    li.nav-item {
+                        a.nav-link {
+                            span.nav-link-text {
+                                font-size: 1vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Styles for screens 1280px and above (Extra Large Desktop) */
+        @media only screen and (min-width: 1280px) and (max-width: 1439px) {}
+
+        /* Styles for screens 1280px and above (Double Extra Large Desktop) */
+        /* @media only screen and (min-width: 1440px) and (max-width: 1920px) {} */
+        @media only screen and (min-width: 1440px) {}
+    </style>
+    <script src="https://kit.fontawesome.com/329ab15e27.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script> -->
+</head>
+
+<body class="p-0 m-0 border-0 bd-example m-0 border-0">
+    <!-- Example Code -->
+    <nav
+        class="navbar navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-expand-xl navbar-expand-xxl text-white pb-0">
+        <div class="container-fluid">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="https://qa.agilityhealthradar.com/images/AH-New-Tagline-Logo-White.png" alt="Logo" width="120"
+                    class="d-inline-block align-text-top" />
+            </a>
+
+
+            <!-- Canvas view - start -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <!-- <i class="bi bi-list" style="color: #ffffff;"></i> -->
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                        <img src="https://qa.agilityhealthradar.com/images/AH-New-Tagline-Logo-White.png"
+                            alt="Agility Health" style="width: 143px;">
+                    </h5>
+
+                    <!-- <i class="bi bi-x text-reset" data-bs-dismiss="offcanvas"
+                        style="color: #ffffff !important; font-size: 24px; cursor: pointer;"></i> -->
+                    <i data-bs-dismiss="offcanvas" class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="offcanvas-body justify-content-end">
+                    <ul class="navbar-nav justify-content-end m-auto mb-n2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="fa fa-users-cog"></i>
+                                <span class="nav-link-text"> Manage Teams </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-ruler-combined"></i>
+                                <span class="nav-link-text"> Measure </span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-chart-simple"></i>
+                                <span class="nav-link-text"> Gain Insights </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-bullseye"></i>
+                                <span class="nav-link-text"> Achieve Outcomes </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-leaf"></i>
+                                <span class="nav-link-text"> Grow </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-graduation-cap"></i>
+                                <span class="nav-link-text"> Learn </span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-bs-toggle dd-click" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-th-large"></i>
+                                <span class="nav-link-text">Configure
+                                    <i class="fa-solid fa-chevron-down" style="margin-left: 7px;"></i>
+                                </span>
+                            </a>
+
+                            <div class="dropdown-menu">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="configure-dd-items dropdown-item d-flex align-items-center gap-3"
+                                            href="#">
+                                            <div class="configure-icon-container">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+                                            <div class="configContent">
+                                                <h5>Manage Users</h5>
+                                                <p class="configure-item-description">
+                                                    view and Manage your company & team admins
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="configure-dd-items dropdown-item d-flex align-items-center gap-3"
+                                            href="#">
+                                            <div class="configure-icon-container">
+                                                <i class="fa fa-tag"></i>
+                                            </div>
+                                            <div class="configContent">
+                                                <h5>Manage Tags</h5>
+                                                <p class="configure-item-description">
+                                                    view and Manage your company & team admins
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="configure-dd-items dropdown-item d-flex align-items-center gap-3"
+                                            href="#">
+                                            <div class="configure-icon-container">
+                                                <i class="fa-solid fa-satellite-dish"></i>
+                                            </div>
+                                            <div class="configContent">
+                                                <h5>Manage Radar</h5>
+                                                <p class="configure-item-description">
+                                                    view and Manage your company & team admins
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="configure-dd-items dropdown-item d-flex align-items-center gap-3"
+                                            href="#">
+                                            <div class="configure-icon-container">
+                                                <i class="fa-solid fa-window-maximize"></i>
+                                            </div>
+                                            <div class="configContent">
+                                                <h5>Manage Growth Portal</h5>
+                                                <p class="configure-item-description">
+                                                    view and Manage your company & team admins
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="configure-dd-items dropdown-item d-flex align-items-center gap-3"
+                                            href="#">
+                                            <div class="configure-icon-container">
+                                                <i class="fa fa-project-diagram"></i>
+                                            </div>
+                                            <div class="configContent">
+                                                <h5>Manage Integration</h5>
+                                                <p class="configure-item-description">
+                                                    view and Manage your company & team admins
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="configure-dd-items dropdown-item d-flex align-items-center gap-3"
+                                            href="#">
+                                            <div class="configure-icon-container">
+                                                <i class="fa fa-chart-pie"></i>
+                                            </div>
+                                            <div class="configContent">
+                                                <h5>Manage Reports</h5>
+                                                <p class="configure-item-description">
+                                                    view and Manage your company & team admins
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="configure-dd-items dropdown-item d-flex align-items-center gap-3"
+                                            href="#">
+                                            <div class="configure-icon-container">
+                                                <i class="fa fa-cog"></i>
+                                            </div>
+                                            <div class="configContent">
+                                                <h5>Advance Customization</h5>
+                                                <p class="configure-item-description">
+                                                    view and Manage your company & team admins
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="configure-dd-items dropdown-item d-flex align-items-center gap-3"
+                                            href="#">
+                                            <div class="configure-icon-container">
+                                                <i class="fa-solid fa-users"></i>
+                                            </div>
+                                            <div class="configContent">
+                                                <h5>Manage Facilitator</h5>
+                                                <p class="configure-item-description">
+                                                    view and Manage your company & team admins
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <div class="dropdown user-profile-dd">
+                        <button
+                            class="btn dropdown-bs-toggle user-profile-button d-flex align-items-center gap-2 dd-click"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                            <!-- <div class="userprofile-name">SR</div> -->
+                            <img class="userprofile-img"
+                                src="https://agilityhealthradar.com/wp-content/uploads/2022/01/team-agility-radar.webp"></img>
+                            <div class="userprofile-text">
+                                <div class="userprofile-person">Steve Rogers</div>
+                                <div class="userprofile-role">Site Admin</div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">Switch - old navigation</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">My Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Log out</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropup user-profile-dd">
+                        <button
+                            class="btn dropdown-bs-toggle user-profile-button d-flex align-items-center gap-2 dd-click"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <!-- <div class="userprofile-name">SR</div> -->
+                            <img class="userprofile-img"
+                                src="https://agilityhealthradar.com/wp-content/uploads/2022/01/team-agility-radar.webp"></img>
+                            <div class="userprofile-text">
+                                <div class="userprofile-person">Steve Rogers</div>
+                                <div class="userprofile-role">Site Admin</div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">Switch - old navigation</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">My Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Canvas view - end -->
+        </div>
+    </nav>
+
+    <h1 style="position: absolute;top: 50vh;left: 40vw;"> Final POC - Completed</h1>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        let nav_links = document.querySelectorAll('a.nav-link');
+        nav_links.forEach((nav_link) => {
+            nav_link.addEventListener('click', () => {
+                console.log('clicked');
+                nav_links.forEach((val) => {
+                    if ([...val.classList].includes('active')) {
+                        val.setAttribute['area-current'] = '';
+                        val.classList.remove('active');
+                    }
+                });
+                nav_link.setAttribute['area-current'] = 'page';
+                nav_link.classList.add('active');
+            });
+        });
+
+        // Changing dropdown icon based on open close of dropdown
+        // const profile_dd = document.querySelector("button.user-profile-button") || document.querySelector("button.user-profile-button");
+        // const profile_dd_icon = document.querySelector("button.user-profile-button>i");
+        // profile_dd.addEventListener("click",()=>{
+        //     if(profile_dd.getAttribute("aria-expanded")=="true"){
+        //         profile_dd_icon.classList.remove("fa-chevron-down")
+        //         profile_dd_icon.classList.add("fa-chevron-up")
+        //     }
+        //     else{
+        //         profile_dd_icon.classList.remove("fa-chevron-up")
+        //         profile_dd_icon.classList.add("fa-chevron-down")
+        //     }
+        // }) 
+
+        const dd_buttons = document.querySelectorAll(".dd-click");
+
+        dd_buttons.forEach((ele) => {
+            ele.addEventListener("click", (event) => {
+                const chevron_icons = ele.querySelector("i.fa-solid");
+                console.log("fsf --- ", event.target)
+                if (ele.getAttribute("aria-expanded") == "true") {
+                    chevron_icons.classList.remove("fa-chevron-down")
+                    chevron_icons.classList.add("fa-chevron-up")
+                }
+                else {
+                    chevron_icons.classList.remove("fa-chevron-up")
+                    chevron_icons.classList.add("fa-chevron-down")
+                }
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>

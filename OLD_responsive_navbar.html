@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+
+    <style>
+        a.active {
+            background-color: white;
+        }
+
+        div.userprofile-img {
+            padding: 10px;
+            border-radius: 100px;
+            background-color: gray;
+        }
+
+        div.dropdown-menu {
+            width: max-content;
+            position: absolute;
+            left: unset !important;
+            right: 0;
+        }
+
+        nav {
+            background-color: #33a8eb;
+        }
+
+        .nav-icon {
+            display: inline-block;
+            width: 15px;
+        }
+
+        a.nav-link {
+            border-radius: 7px 7px 0 0;
+        }
+
+        /* Styles for extra small devices (up to 479px) */
+        @media only screen and (min-width: 300px) and (max-width: 479px) {
+            div.dropdown-menu {
+                width: 93vw !important;
+            }
+
+            a.nav-link {
+                padding: 10px 7px;
+            }
+
+            .configure-item-description {
+                text-wrap: wrap;
+            }
+        }
+
+        /* Styles for small devices (480px to 639px) */
+        @media only screen and (min-width: 480px) and (max-width: 639px) {
+            div.dropdown-menu {
+                width: fit-content !important;
+            }
+
+            a.nav-link {
+                padding: 10px 7px;
+            }
+
+            .configure-item-description {
+                text-wrap: wrap;
+            }
+        }
+
+        /* Styles for screens from 640px to 767px (Tablet) */
+        @media only screen and (min-width: 640px) and (max-width: 767px) {}
+
+        /* Styles for screens from 768px to 1023px (Small Desktop) */
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            div.navbar-collapse {
+                ul.navbar-nav {
+                    margin-left: auto !important;
+                    margin-right: 25px !important;
+
+                    li.nav-item {
+                        a.nav-link {
+                            span.nav-link-text {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            div.dropdown-menu {
+                width: fit-content;
+            }
+        }
+
+        /* Styles for screens from 1024px to 1279px (Large Desktop) */
+        @media only screen and (min-width: 1024px) and (max-width: 1279px) {}
+
+        /* Styles for screens 1280px and above (Extra Large Desktop) */
+        /* @media only screen and (min-width: 1280px) {} */
+
+        /* Styles for screens 1280px and above (Extra Large Desktop) */
+        @media only screen and (min-width: 1280px) and (max-width: 1439px) {}
+
+        /* Styles for screens 1280px and above (Double Extra Large Desktop) */
+        /* @media only screen and (min-width: 1440px) and (max-width: 1920px) {} */
+        @media only screen and (min-width: 1440px) {}
+    </style>
+    <script src="https://kit.fontawesome.com/329ab15e27.js" crossorigin="anonymous"></script>
+    <title>OLD - Own</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="p-0 m-0 border-0 bd-example m-0 border-0">
+    <!-- Example Code -->
+    <nav
+        class="navbar navbar-expand-lg navbar-expand-sm navbar-expand-md navbar-expand-xl navbar-expand-xxl text-white pb-0">
+        <div class="container-fluid">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <a class="navbar-brand" href="#">
+                <img src="https://dev.agilityhealthradar.com/V2/static/media/AH-Logo-Trans.5004329155896e5e67b1.png"
+                    alt="Logo" width="80" height="24" class="d-inline-block align-text-top" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <i class="fa fa-users-cog"></i>
+                            <span class="nav-link-text"> Manage Teams </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-ruler-combined"></i>
+                            <span class="nav-link-text"> Measure </span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            <span class="nav-link-text"> Gain Insights </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <span class="nav-link-text"> Achieve Outcomes </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-leaf"></i>
+                            <span class="nav-link-text"> Grow </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-graduation-cap"></i>
+                            <span class="nav-link-text"> Learn </span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa fa-th-large"></i>
+                            <span class="nav-link-text"> Configure </span>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="row">
+                                <div class="col">
+                                    <a class="dropdown-item d-flex align-items-center gap-3" href="#">
+                                        <i class="fa fa-users"></i>
+                                        <div class="configContent">
+                                            <h5>Manage Users</h5>
+                                            <p class="configure-item-description">
+                                                view and Manage your company & team admins
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item d-flex align-items-center gap-3" href="#">
+                                        <i class="fa fa-tag"></i>
+                                        <div class="configContent">
+                                            <h5>Manage Tags</h5>
+                                            <p class="configure-item-description">
+                                                view and Manage your company & team admins
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="dropdown-item d-flex align-items-center gap-3" href="#">
+                                        <i class="fa-solid fa-satellite-dish"></i>
+                                        <div class="configContent">
+                                            <h5>Manage Radar</h5>
+                                            <p class="configure-item-description">
+                                                view and Manage your company & team admins
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item d-flex align-items-center gap-3" href="#">
+                                        <i class="fa-solid fa-window-maximize"></i>
+                                        <div class="configContent">
+                                            <h5>Manage Growth Portal</h5>
+                                            <p class="configure-item-description">
+                                                view and Manage your company & team admins
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="dropdown-item d-flex align-items-center gap-3" href="#">
+                                        <i class="fa fa-project-diagram"></i>
+                                        <div class="configContent">
+                                            <h5>Manage Integration</h5>
+                                            <p class="configure-item-description">
+                                                view and Manage your company & team admins
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item d-flex align-items-center gap-3" href="#">
+                                        <i class="fa fa-chart-pie"></i>
+                                        <div class="configContent">
+                                            <h5>Manage Reports</h5>
+                                            <p class="configure-item-description">
+                                                view and Manage your company & team admins
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="dropdown-item d-flex align-items-center gap-3" href="#">
+                                        <i class="fa fa-cog"></i>
+                                        <div class="configContent">
+                                            <h5>Advance Customization</h5>
+                                            <p class="configure-item-description">
+                                                view and Manage your company & team admins
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item d-flex align-items-center gap-3" href="#">
+                                        <i class="fa-solid fa-users"></i>
+                                        <div class="configContent">
+                                            <h5>Manage Facilitator</h5>
+                                            <p class="configure-item-description">
+                                                view and Manage your company & team admins
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle d-flex align-items-center gap-2 p-0" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="userprofile-img">SR</div>
+                        <div>
+                            <div>Steve Rogers</div>
+                            <div>Site Admin</div>
+                        </div>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#">Switch - old navigation</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        let nav_links = document.querySelectorAll('a.nav-link');
+        nav_links.forEach((nav_link) => {
+            nav_link.addEventListener('click', () => {
+                console.log('clicked');
+                nav_links.forEach((val) => {
+                    if ([...val.classList].includes('active')) {
+                        val.setAttribute['area-current'] = '';
+                        val.classList.remove('active');
+                    }
+                });
+                nav_link.setAttribute['area-current'] = 'page';
+                nav_link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

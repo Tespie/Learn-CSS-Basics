@@ -16,7 +16,7 @@ body {
 */
 
 /* @media (width < 500px) { */
-@media (max-width : 500px) {
+/* @media (max-width : 500px) {
     body {
         color: blue;
     }
@@ -38,5 +38,63 @@ body {
 @media print {
     body {
         color: cyan
+    }
+} */
+
+/* Styles for extra small devices (up to 479px) */
+@media only screen and (min-width: 300px) and (max-width: 575px) {
+    body {
+        background-color: red;
+    }
+}
+
+/* Styles for small devices (480px to 639px) */
+@media only screen and (min-width: 576px) and (max-width: 639px) {
+    body {
+        background-color: blue;
+    }
+}
+
+/* Styles for screens from 640px to 767px (Tablet) */
+@media only screen and (min-width: 640px) and (max-width: 767px) {
+    body {
+        background-color: green;
+    }
+}
+
+/* Styles for screens from 768px to 1023px (Small Desktop) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        background-color: hotpink;
+    }
+}
+
+/* Styles for screens from 1024px to 1279px (Large Desktop) */
+@media only screen and (min-width: 1024px) and (max-width: 1114px) {
+
+    body {
+        background-color: purple;
+    }
+}
+
+/* Styles for screens 1280px and above (Extra Large Desktop) */
+/* @media only screen and (min-width: 1280px) {} */
+
+@media only screen and (min-width: 1115px) and (max-width: 1149px) {
+    body {
+        background-color: coral;
+    }
+}
+
+
+@media only screen and (min-width: 1150px) and (max-width: 1230px) {
+    body {
+        background-color: darkolivegreen;
+    }
+}
+
+@media only screen and (min-width: 1230px) and (max-width: 1350px) {
+    body {
+        background-color: saddlebrown;
     }
 }

@@ -47,3 +47,87 @@ li:nth-child(4n) {
 li:nth-child(5n+2) {
     background-color: cyan;
 }
+
+/*overriding all the styles for teams dashboard*/
+div.rightBlock div#teamsTab div#manageteamsTab div#divTeamGrid div#Teams table.teams-table tbody td.templateCell div.gridMenuButton {
+
+    /*edit-button grid menu button container in teams table*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul.k-widget {
+        display: flex;
+        align-items: center;
+        width: fit-content !important;
+        height: 36px;
+        border: 2px solid var(--foundation-color) !important;
+
+        /*Edit button - start*/
+        li.k-item.k-first {
+            border-right: 2px solid var(--foundation-color);
+            height: 100%;
+            width: auto !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 17px;
+
+            /*edit span - start*/
+            span.k-link {
+                background: #fff;
+                padding: 0;
+            }
+
+            /*edit span - end*/
+
+        }
+
+        /*edit button - end*/
+
+        /*k-last icon - start*/
+
+        li.k-item.k-last {
+            border-right: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            /*width: 20px;*/
+            height: 100%;
+            padding: 0;
+
+            span.k-link {
+                width: 16px;
+                height: 100%;
+                padding: 0 8px;
+                align-items: center;
+                justify-content: center;
+
+                /*dropdown icon - start*/
+                span.fa-chevron-down {
+                    font-size: 12px;
+                }
+
+                /*dropdown icon - end*/
+            }
+
+            /*animation container*/
+            div.k-animation-container:nth-child(3)>ul.k-group {
+                li.k-item {
+                    border: 1px solid transparent !important;
+                    padding: 0 !important;
+
+                    /*dropdown item - archive*/
+                    span.k-link {
+                        width: fit-content !important;
+                        padding: 10px 25px !important;
+                    }
+
+                }
+            }
+        }
+
+        /*k-last icon - end*/
+    }
+}
+
+/*end*/

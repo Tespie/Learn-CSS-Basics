@@ -1,0 +1,15 @@
+/*
+* Default value 16 to 10 pixels making the 10 base system
+* 16 x 0.625 = 10
+*/
+:root {
+    font-size: 62.5%;
+}
+
+/*
+* Scale the font size back to 16
+* 10 x 1.6 = 16
+*/
+body {
+    font-size: 1.6rem;
+}
