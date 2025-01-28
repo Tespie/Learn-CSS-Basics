@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: rgb(177, 177, 177);
 }
 
 h1 {
@@ -14,4 +14,105 @@ p {
     font-weight: bold;
     text-decoration: pink dashed underline;
     font-size: 28px;
+}
+
+span:first-of-type {
+    color: red;
+}
+span:last-of-type {
+    color: green;
+}
+
+h2 {
+    font-family: 'Mukta';
+    color: white;
+    /* font-variation-settings: 'wght' 900; */
+    font-weight: 300; 
+}
+
+.Mukta {
+    font-family: 'Mukta'; 
+    font-weight: 300; 
+}
+.Mukta-Light {
+    font-family: 'Mukta-Light'; 
+}
+.Mukta-ExtraBold {
+    font-family: 'Mukta-ExtraBold'; 
+}
+
+.PlaywriteVN-100 {
+    font-family: 'PlaywriteVN';
+    font-weight: 100;
+}
+.PlaywriteVN-500 {
+    font-family: 'PlaywriteVN'; 
+    font-weight: 500;
+}
+.PlaywriteVN-900 {
+    font-family: 'PlaywriteVN'; 
+    font-weight: 900;
+}
+
+.Kanit-Thin {
+    font-family: 'Kanit-Thin'; 
+    /* font-weight: 100; */
+}
+.Kanit-Medium {
+    font-family: 'Kanit-Medium'; 
+    /* font-weight: 100; */
+}
+.Kanit-Bold {
+    font-family: 'Kanit-Bold'; 
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'PlaywriteVN';
+    src: url('./fonts/PlaywriteVN-VariableFont_wght.ttf');
+    font-weight: 100 900;
+    font-style: normal; /* Specify the style (normal, italic, etc.) */
+}
+
+@font-face {
+    font-family: 'Kanit-Thin';
+    src: url('./fonts/Kanit-Thin.ttf');
+    /* font-weight: 100 900; */
+}
+
+@font-face {
+    font-family: 'Kanit-Bold';
+    src: url('./fonts/Kanit-Bold.ttf');
+}
+@font-face {
+    font-family: 'Kanit-Medium';
+    src: url('./fonts/Kanit-Medium.ttf');
+    /* font-weight: 100 900; */
+}
+
+@font-face {
+    font-family: 'Mukta';
+    src: url('./fonts/Mukta-Light.ttf') format('truetype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mukta-Light';
+    src: url('./fonts/Mukta-Light.ttf') format('truetype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mukta';
+    src: url('./fonts/Mukta-Regular.ttf') format('truetype');
+    font-weight: normal; /* 400 */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Mukta-ExtraBold';
+    src: url('./fonts/Mukta-ExtraBold.ttf') format('truetype');
+    font-weight: 800; /* ExtraBold */
+    font-style: normal;
 }

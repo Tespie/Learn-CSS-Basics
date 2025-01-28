@@ -14,9 +14,21 @@
 
     <h1>Lets explore fonts today </h1>
 
+    <span>For above text in H1 tag,  the browser will first try to use the "Press Start 2P" font, and if it's not available, it will use "consolas", and if that's also not available, it will use the generic sans-serif font family.</span>
+    <span>If all unavailable, the browser will revert to its default font. This default font is not specified in your CSS and can vary between different browsers and operating systems. Therefore, it is essential to ensure that at least one of the specified fonts is available or to provide a generic fallback (like serif or sans-serif) at the end of your font stack to ensure a more consistent appearance across different environments. </span>
+
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio repellat officia, temporibus modi quia
         praesentium. Ducimus sed voluptate fugit alias nisi eveniet blanditiis corporis sit odio, nemo qui! Debitis,
         aliquid.</p>
+
+        <div style="height: 5px; background-color: white;"></div>
+        
+        <h1 class="Mukta-ExtraBold">Fonts applied here from css classes - Mukta-ExtraBold</h1>
+
+        <h2> External Fonts are applied on this h2 from ttf file</h2>
+
+        <h3 class="Kanit-Bold"> again font to this h3 from css class which internally uses font-family and it uses @font-face</h3>
+
 
 </body>
 
