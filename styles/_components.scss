@@ -1,0 +1,54 @@
+// _components.scss
+
+.header {
+    background-color: $primary-color;
+    color: white;
+    padding: $padding;
+
+    .navbar {
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                display: inline;
+                margin-right: 15px;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section {
+    margin: $padding;
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: $padding / 2;
+    }
+}
+
+.service-box {
+    background-color: $secondary-color;
+    padding: $padding;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    
+    h3 {
+        margin-top: 0;
+        color: white;
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: $padding;
+}

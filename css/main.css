@@ -1,0 +1,64 @@
+.header {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+}
+.header .navbar ul {
+  list-style-type: none;
+  padding: 0;
+}
+.header .navbar ul li {
+  display: inline;
+  margin-right: 15px;
+}
+.header .navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+.header .navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+.section {
+  margin: 20px;
+}
+.section h2 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.service-box {
+  background-color: #2ecc71;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 5px 0;
+}
+.service-box h3 {
+  margin-top: 0;
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+.button {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*# sourceMappingURL=main.css.map */

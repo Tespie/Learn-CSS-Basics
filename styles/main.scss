@@ -1,0 +1,14 @@
+// main.scss
+
+@import 'variables';   // Importing variables
+@import 'mixins';      // Importing mixins
+@import 'components';   // Importing component styles
+
+body {
+    font-family: $font-stack; // Using font stack variable
+}
+
+// Apply button styles globally if needed
+.button {
+   @include button-style($primary-color);
+}

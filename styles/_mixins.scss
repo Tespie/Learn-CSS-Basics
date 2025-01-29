@@ -1,0 +1,21 @@
+// _mixins.scss
+
+@mixin button-style($bg-color) {
+    background-color: $bg-color;
+    color: white;
+    padding: $padding;
+    border-radius: $border-radius;
+    border: none;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: darken($bg-color, 10%);
+        box-shadow: $box-shadow;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
