@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Form Validation Example</title>
+    <style>
+        #registrationForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+        }
+
+        #registrationForm input,
+        #registrationForm select,
+        #registrationForm textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        input:invalid {
+            border-color: red;
+        }
+
+        input:valid {
+            border-color: green;
+        }
+
+        textarea:invalid {
+            border-color: red;
+        }
+
+        textarea:valid {
+            border-color: green;
+        }
+
+        #submissionSummary {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body style="display: flex;">
+
+    <h1>Registration Form</h1>
+    <form id="registrationForm">
+
+        <label for="name">Your Name (required):</label>
+        <input type="text" id="name" name="name" required minlength="2" maxlength="30" />
+
+        <label for="email">Email (required):</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="age">Age (must be between 12 and 120):</label>
+        <input type="number" id="age" name="age" min="12" max="120" required />
+
+        <label for="fruit">Favorite Fruit (required):</label>
+        <input type="text" id="fruit" name="fruit" list="fruits" required
+            pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range" />
+        <datalist id="fruits">
+            <option value="Banana">
+            <option value="Cherry">
+            <option value="Apple">
+            <option value="Strawberry">
+            <option value="Lemon">
+            <option value="Orange">
+        </datalist>
+
+        <label for="message">Leave a message (max 140 characters):</label>
+        <textarea id="message" name="message" maxlength="140" rows="5"></textarea>
+
+        <fieldset>
+            <legend>Do you have a driver's license? (required)</legend>
+            <input type="radio" required name="driverLicense" id="licenseYes" value="yes" />
+            <label for="licenseYes">Yes</label>
+            <input type="radio" required name="driverLicense" id="licenseNo" value="no" />
+            <label for="licenseNo">No</label>
+        </fieldset>
+
+        <label for="employmentStatus">Employment Status (required):</label>
+        <select id="employmentStatus" name="employmentStatus" required>
+            <option value="">Select...</option>
+            <option value="employed">Employed</option>
+            <option value="unemployed">Unemployed</option>
+            <option value="student">Student</option>
+        </select>
+
+        <label for="website">Website (optional):</label>
+        <input type="url" id="website" name="website"/>
+
+        <!-- Phone number input with pattern -->
+        <label for="phone">Phone Number (format: xxx-xxx-xxxx):</label>
+        <input type="tel" id="phone" name="phone"
+               pattern="\d{3}-\d{3}-\d{4}" title="Phone number must be in the format: 123-456-7890"/>
+
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <!-- Section to display submitted data -->
+    <div id="submissionSummary"></div>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            // Check if the form is valid
+            if (!this.checkValidity()) {
+                event.preventDefault(); // Prevent form submission if invalid
+                alert('Please fill out the form correctly.');
+                return; // Exit the function if the form is invalid
+            }
+            
+            // Prevent default form submission
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const age = document.getElementById('age').value;
+            const fruit = document.getElementById('fruit').value;
+            const message = document.getElementById('message').value;
+            const driverLicense = document.querySelector('input[name=driverLicense]:checked').value;
+            const employmentStatus = document.getElementById('employmentStatus').value;
+            const website = document.getElementById('website').value;
+            const phone = document.getElementById('phone').value;
+
+            // Create a summary of submitted data
+            let summaryHTML = `<h2>Submitted Data:</h2>`;
+            summaryHTML += `<p><strong>Name:</strong> ${name}</p>`;
+            summaryHTML += `<p><strong>Email:</strong> ${email}</p>`;
+            summaryHTML += `<p><strong>Age:</strong> ${age}</p>`;
+            summaryHTML += `<p><strong>Favorite Fruit:</strong> ${fruit}</p>`;
+            summaryHTML += `<p><strong>Message:</strong> ${message}</p>`;
+            summaryHTML += `<p><strong>Driver's License:</strong> ${driverLicense}</p>`;
+            summaryHTML += `<p><strong>Employment Status:</strong> ${employmentStatus}</p>`;
+            
+           // Only show website if provided
+           if (website) {
+               summaryHTML += `<p><strong>Website:</strong> ${website}</p>`;
+           }
+           
+           // Only show phone number if provided
+           if (phone) {
+               summaryHTML += `<p><strong>Phone Number:</strong> ${phone}</p>`;
+           }
+
+           // Display the summary in the submissionSummary div
+           document.getElementById('submissionSummary').innerHTML = summaryHTML;
+
+           alert('Form submitted successfully!');
+       });
+    </script>
+
+</body>
+
+</html>
