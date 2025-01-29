@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout Example</title>
+    <link rel="stylesheet" href="styles/index22_ Grid Layout.css">
+</head>
+<body>
+
+<div class="container">
+    <header class="header">Header</header>
+    <nav class="nav">Navigation</nav>
+    <main class="main-content">
+        
+        <h1>Main Content Area</h1>
+        Understand the fr Unit: <br>
+        The fr unit divides the available space in the grid container into proportional parts.
+        In 2fr 10fr 4fr, the total number of "fractions" is:<br>
+        2 + 10 + 4 = 16<br>
+        <br>
+        Calculate the Proportion of Each Column:<br>
+        Each column's width is determined by dividing its fr value by the total number of fractions (16).<br>
+        <br>
+        First Column (2fr):<br>
+        (2 / 16) × 100 = 12.5%<br>
+        The first column takes 12.5% of the total width.<br>
+        <br>
+
+        Second Column (10fr):<br>
+        (10 / 16) × 100 = 62.5%<br>
+        The second column takes 62.5% of the total width.<br>
+        <br>
+
+        Third Column (4fr):<br>
+        (4 / 16) × 100 = 25%<br>
+        The third column takes 25% of the total width.<br>
+
+        <br>
+        <b>Final Percentages</b><br>
+First Column: 12.5% of the container's width.<br>
+Second Column: 62.5% of the container's width.<br>
+Third Column: 25% of the container's width.<br>
+
+
+    </main>
+    <aside class="sidebar">Sidebar</aside>
+    <footer class="footer">Footer</footer>
+</div>
+
+</body>
+</html>

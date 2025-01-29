@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout Example</title>
+    <style>
+        /* Grid Container */
+        body {
+            display: grid;
+            grid-template-rows: 1fr 2fr 1fr; /* Divides the height into 3 rows: 1 part, 2 parts, 1 part */
+            grid-template-columns: 1fr 1fr 1fr; /* Divides the width into 3 equal columns */
+            grid-template-columns: 2fr auto 4fr;
+            grid-template-columns: 2fr 10fr 4fr;
+            grid-template-columns: 1fr 5fr 3fr;
+            grid-column: 2 / 4; /* Spans from column 2 to column 4 */
+            grid-row: 1 / 3;    /* Spans from row 1 to row 3 */
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+        }
+
+        /* Grid Items */
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            font-size: 1.5rem;
+        }
+
+        .item1 { background-color: lightblue; }
+        .item2 { background-color: lightgreen; }
+        .item3 { background-color: lightcoral; }
+        .item4 { background-color: lightgoldenrodyellow; }
+        .item5 { background-color: lightpink; }
+        .item6 { background-color: lightgray; }
+    </style>
+</head>
+<body>
+    <!-- By default, grid items (the <div> elements) are placed into the grid row by row and column by column in the order they appear in the HTML. This behavior is called implicit placement. -->
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+</body>
+</html>
