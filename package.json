@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "update-last-push": "git add . && git commit --amend --no-edit && git push --force origin main"
+  },
   "dependencies": {
     "sass": "^1.83.4"
   }
