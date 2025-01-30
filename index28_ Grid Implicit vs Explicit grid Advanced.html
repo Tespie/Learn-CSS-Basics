@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implicit vs. Explicit Grid Advanced</title>
+    <style>
+        /* Grid Container */
+        .grid-container {
+            display: grid; /* Enables grid layout */
+            
+            /* Explicit Grid: Defining 3 columns and 3 rows */
+            grid-template-columns: 1fr 2fr 1fr; /* 3 columns: 
+                                                   - 1st column: 1 fraction of space
+                                                   - 2nd column: 2 fractions of space
+                                                   - 3rd column: 1 fraction of space */
+            grid-template-rows: 100px auto 100px; /* 3 rows:
+                                                     - 1st row: 100px tall
+                                                     - 2nd row: auto (adjusts to content)
+                                                     - 3rd row: 100px tall */
+
+            /* Implicit Grid: Defining the size of rows and columns created automatically */
+            grid-auto-rows: 50px; /* Implicit rows will be 50px tall */
+            grid-auto-columns: 100px; /* Implicit columns will be 100px wide */
+
+            /* Gap between grid items */
+            gap: 10px; /* Adds a 10px gap between rows and columns */
+        }
+
+        /* Grid Items */
+        .grid-item {
+            background-color: lightblue; /* Background color for visibility */
+            display: flex; /* Enables flexbox for content alignment */
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Centers content vertically */
+            font-size: 1.2rem; /* Font size for text */
+            border: 1px solid black; /* Adds a border around each grid item */
+        }
+
+        /* Explicitly Placed Items */
+        .item1 {
+            grid-column: 1 / 3; /* Starts at column 1 and spans to column 3 (spans 2 columns) */
+            grid-row: 1 / 2; /* Starts at row 1 and ends at row 2 (spans 1 row) */
+            background-color: lightcoral; /* Different color for emphasis */
+        }
+
+        .item2 {
+            grid-column: 3; /* Placed in the 3rd column */
+            grid-row: 2 / 4; /* Starts at row 2 and spans to row 4 (spans 2 rows) */
+            background-color: lightgreen; /* Different color for emphasis */
+        }
+
+        .item3 {
+            grid-area: 3 / 1 / 4 / 4; /* Shorthand for:
+                                         - grid-row-start: 3
+                                         - grid-column-start: 1
+                                         - grid-row-end: 4
+                                         - grid-column-end: 4
+                                         This places the item in the 3rd row, spanning all 3 columns */
+            background-color: lightpink; /* Different color for emphasis */
+        }
+
+        /* Implicitly Placed Items */
+        .item4 {
+            /* No explicit placement, so it will be placed in the next available cell */
+        }
+
+        .item5 {
+            /* No explicit placement, so it will be placed in the next available cell */
+        }
+
+        .item6 {
+            /* No explicit placement, so it will be placed in the next available cell */
+        }
+
+        .item7 {
+            /* This item will overflow into the implicit grid (new rows/columns will be created) */
+        }
+
+        .item8 {
+            /* This item will also overflow into the implicit grid */
+        }
+    </style>
+</head>
+<body>
+    <h1>Explicit vs. Implicit Grid</h1>
+    <p>
+        This example demonstrates the difference between explicit and implicit grids. 
+        Items 1, 2, and 3 are explicitly placed using <code>grid-column</code>, <code>grid-row</code>, or <code>grid-area</code>. 
+        Items 4, 5, 6, 7, and 8 are implicitly placed by the browser, with new rows or columns created as needed.
+    </p>
+
+    <div class="grid-container">
+        <!-- Explicitly Placed Items -->
+        <div class="grid-item item1">Item 1 (Explicit)</div>
+        <div class="grid-item item2">Item 2 (Explicit)</div>
+        <div class="grid-item item3">Item 3 (Explicit)</div>
+
+        <!-- Implicitly Placed Items -->
+        <div class="grid-item item4">Item 4 (Implicit)</div>
+        <div class="grid-item item5">Item 5 (Implicit)</div>
+        <div class="grid-item item6">Item 6 (Implicit)</div>
+        <div class="grid-item item7">Item 7 (Implicit)</div>
+        <div class="grid-item item8">Item 8 (Implicit)</div>
+    </div>
+</body>
+</html>
