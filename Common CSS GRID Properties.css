@@ -1,0 +1,112 @@
+/* CSS GRID PROPERTIES EXPLAINED */
+
+/* Enable Grid Layout */
+.container {
+  display: grid; /* Defines this element as a grid container */
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  grid-template-rows: 100px 200px auto; /* Defines row sizes */
+  gap: 10px; /* Adds spacing between grid items */
+  gap: 20px 10px; /* 20px gap between rows, 10px gap between columns */
+  justify-items: center; /* Aligns items along the horizontal axis */
+  align-items: center; /* Aligns items along the vertical axis */
+  justify-content: center; /* Aligns the entire grid horizontally */
+  align-content: center; /* Aligns the entire grid vertically */
+}
+
+/* Grid Column Definitions */
+.container {
+  grid-template-columns: 100px 200px auto; /* Custom column sizes */
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  grid-template-columns: minmax(100px, 300px) 1fr; /* Ensures minimum and maximum width */
+  grid-template-columns: repeat(4, 1fr); /* Equivalent to 1fr 1fr 1fr 1fr */
+}
+
+/* Grid Row Definitions */
+.container {
+  grid-template-rows: 100px auto 50px; /* Custom row sizes */
+  grid-template-rows: repeat(3, minmax(50px, auto)); /* Dynamic row heights */
+}
+
+/* Positioning Items in the Grid */
+.item1 {
+  grid-column-start: 1; /* Starts at column 1 */
+  grid-column-end: 3; /* Ends at column 3 */
+}
+
+.item2 {
+  grid-row-start: 2; /* Starts at row 2 */
+  grid-row-end: 4; /* Ends at row 4 */
+}
+
+/* Shorthand for Grid Positioning */
+.item3 {
+  grid-column: 1 / span 2; /* Starts at column 1 and spans 2 columns */
+  grid-row: 2 / span 3; /* Starts at row 2 and spans 3 rows */
+}
+
+/* Shorthand for Grid Area (combines grid-row and grid-column) */
+.item6 {
+  grid-area: 2 / 1 / 4 / 3; /* row-start / column-start / row-end / column-end */
+}
+
+/* Defining Grid Areas */
+.container {
+  grid-template-areas: 
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
+/* Auto-placement of Grid Items */
+.container {
+  grid-auto-flow: row; /* Default: places items row-wise */
+  grid-auto-flow: column; /* Places items column-wise */
+  grid-auto-flow: dense; /* Fills gaps in the grid efficiently */
+}
+
+/* Automatically Sizing New Rows/Columns */
+.container {
+  grid-auto-rows: minmax(100px, auto); /* Automatically sized rows */
+  grid-auto-columns: minmax(100px, auto); /* Automatically sized columns */
+}
+
+/* Aligning Individual Grid Items */
+.item4 {
+  justify-self: start; /* Aligns to the start of the column */
+  align-self: end; /* Aligns to the bottom of the row */
+}
+
+/* Aligning Entire Grid */
+.container {
+  place-items: center; /* Shorthand for align-items and justify-items */
+  place-content: center; /* Shorthand for align-content and justify-content */
+}
+
+/* Explicit Grid Naming */
+.container {
+  grid-template-columns: [first] 100px [middle] 200px [last]; /* Naming grid lines */
+}
+
+.item5 {
+  grid-column: first / last; /* Uses named grid lines */
+}
+
+/* Subgrid (for nested grids) */
+.sub-container {
+  display: grid;
+  grid-template-columns: subgrid; /* Inherits from parent grid */
+  grid-template-rows: subgrid; /* Inherits from parent grid */
+}
+
+/* Shorthand for Grid Template (combines rows, columns, and areas) */
+.container {
+  grid-template: 
+    "header header header" 50px
+    "sidebar main main" auto
+    "footer footer footer" 30px / 150px auto;
+}
