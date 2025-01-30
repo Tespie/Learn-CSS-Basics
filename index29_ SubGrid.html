@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Subgrid Example</title>
+    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+     <style>
+        /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the entire document */
+}
+
+/* Outer Grid Container */
+.outer-grid {
+    display: grid; /* Enables grid layout for this container */
+    
+    /* Explicit Grid Definitions */
+    grid-template-columns: 1fr 3fr; /* Two columns: first column takes 1 fraction, second takes 3 fractions */
+    grid-template-rows: auto 1fr auto; /* Three rows: header (auto), content (flexible), footer (auto) */
+    
+    /* Defining Areas */
+    grid-template-areas:
+        "header header"
+        "nav content"
+        "footer footer";
+    
+    gap: 20px; /* Sets a gap of 20px between grid items */
+}
+
+/* Grid Items for Outer Grid */
+.header {
+    grid-area: header; /* Assigns this item to the header area defined in grid-template-areas */
+    background-color: #3498db; /* Header background color */
+    color: white; /* Header text color */
+    padding: 20px; /* Padding inside the header */
+}
+
+.nav {
+    grid-area: nav; /* Assigns this item to the nav area */
+    background-color: #2ecc71; /* Navigation background color */
+    padding: 20px; /* Padding inside the navigation area */
+}
+
+.content {
+    grid-area: content; /* Assigns this item to the content area */
+    background-color: #ecf0f1; /* Content background color */
+    padding: 20px; /* Padding inside the content area */
+}
+
+/* Subgrid Styles */
+.subgrid {
+    display: grid; /* Enables grid layout for this subgrid container */
+
+    /* Inherit columns from parent grid using subgrid */
+    grid-template-columns: subgrid; 
+}
+
+/* Subitem Styles within Subgrid */
+.subitem {
+    background-color: #e74c3c; /* Background color for subitems */
+    color: white; /* Text color for subitems */
+    padding: 10px; /* Padding inside each subitem */
+}
+
+/* Footer Styles */
+.footer {
+    grid-area: footer; /* Assigns this item to the footer area */
+    background-color: #34495e; /* Footer background color */
+    color: white; /* Footer text color */
+    text-align: center; /* Centers text in footer */
+    padding: 10px; /* Padding inside the footer area */
+}
+
+     </style>
+</head>
+<body>
+
+<div class="outer-grid">
+    <div class="header">Header</div>
+    <div class="nav">Navigation</div>
+    <div class="content">
+        <div class="subgrid">
+            <div class="subitem">Sub Item 1</div>
+            <div class="subitem">Sub Item 2</div>
+            <div class="subitem">Sub Item 3</div>
+        </div>
+    </div>
+    <div class="footer">Footer</div>
+</div>
+
+</body>
+</html>
