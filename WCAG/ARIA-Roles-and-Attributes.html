@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA Roles & Attributes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        header { background-color: #007BFF; color: white; padding: 10px 20px; }
+        nav ul { list-style-type: none; padding: 0; }
+        nav a { text-decoration: none; color: #007BFF; }
+        nav a:hover { text-decoration: underline; }
+        .hidden { display: none; }
+        .focusable { outline: 2px solid blue; padding: 5px; display: inline-block; cursor: pointer; }
+        .tabs button { margin-right: 5px; }
+        .tabs button[aria-selected="true"] { font-weight: bold; }
+        .modal, .alert { background-color: white; border: 1px solid #ccc; padding: 20px; margin-top: 10px; }
+        .modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999; display:none;}
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (role="banner") -->
+    <header role="banner" aria-label="Website Header">
+        <h1>My Enhanced Accessible Website</h1>
+    </header>
+
+    <!-- NAVIGATION (role="navigation") -->
+    <nav role="navigation" aria-label="Main Navigation">
+        <ul>
+            <li><a href="#" aria-current="page">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT (role="main") -->
+    <main role="main" aria-labelledby="main-heading">
+        <h2 id="main-heading">Welcome to My Website</h2>
+        <p>This page demonstrates the use of ARIA roles and attributes for accessibility.</p>
+
+        <!-- BUTTON (role="button") -->
+        <div role="button" tabindex="0" class="focusable" aria-label="Submit Form Button" aria-pressed="false" onclick="toggleButton(this)" onkeydown="if(event.key==='Enter'){toggleButton(this)}">
+            Click Me
+        </div>
+
+        <!-- ALERT (role="alert") -->
+        <div id="alertMessage" role="alert" aria-live="assertive" class="hidden alert">
+            Form submitted successfully!
+        </div>
+
+        <!-- MODAL DIALOG (role="dialog") -->
+        <div id="overlay" class="overlay hidden"></div>
+        <div id="modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-modal="true" class="hidden modal">
+            <h2 id="modal-title">Modal Dialog</h2>
+            <p id="modal-description">This is a modal window with ARIA attributes.</p>
+            <button aria-label="Close Modal" onclick="closeModal()">Close</button>
+        </div>
+
+        <button aria-haspopup="dialog" aria-controls="modal" onclick="openModal()">Open Modal</button>
+
+        <!-- FORM INPUTS -->
+        <form onsubmit="submitForm(event)">
+            <label for="name">Name:</label>
+            <input id="name" type="text" required aria-required="true" placeholder="Enter your name">
+            <br>
+            <label for="email">Email:</label>
+            <input id="email" type="email" required aria-required="true" aria-invalid="false">
+            <span id="email-error" class="hidden">Please enter a valid email address.</span>
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- TABLIST (role "tablist", role "tab", role "tabpanel") -->
+        <div role="tablist" aria-label="Sample Tabs" class="tabs">
+            <button role="tab" aria-controls="tab1" aria-selected="true" onclick="switchTab(1)">Tab 1</button>
+            <button role="tab" aria-controls="tab2" aria-selected="false" onclick="switchTab(2)">Tab 2</button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div id="tab1" role='tabpanel' aria-labelledby='tab1-label'>
+            <p id='tab1-label'>Content for Tab 1.</p>
+        </div>
+
+        <div id='tab2' role='tabpanel' aria-labelledby='tab2-label' class='hidden'>
+            <p id='tab2-label'>Content for Tab 2.</p>
+        </div>
+
+        <!-- CAROUSEL (role "region") -->
+        <div role='region' aria-roledescription='carousel' aria-labelledby='carousel-title'>
+            <h2 id='carousel-title'>Image Carousel</h2>
+            <button onclick='showCarouselItem(1)' aria-expanded='true'>Show Item 1</button>
+            <button onclick='showCarouselItem(2)' aria-expanded='false'>Show Item 2</button>
+            <div id='carousel-item1'>Carousel Item 1 Content</div>
+            <div id='carousel-item2' class='hidden'>Carousel Item 2 Content</div>
+         </div>
+
+         <!-- LIVE REGION (aria-live="polite") -->
+         <div aria-live='polite' id='live-region'>
+             Updates will appear here without interrupting the user.
+         </div>
+
+<button onclick="updateLiveRegion()">Trigger Live Update</button>
+
+<script>
+    function updateLiveRegion() {
+        document.getElementById('live-region').innerText = "New update: Your profile has been saved!";
+    }
+</script>
+
+<!-- FORM INPUT WITH aria-placeholder -->
+<label for="search">Search:</label>
+<input id="search" type="text" 
+       aria-autocomplete="list" 
+       aria-activedescendant="suggestion1"
+       aria-placeholder="Type keywords here to search">
+<ul role="listbox">
+    <li id="suggestion1" role="option">Suggestion 1</li>
+    <li id="suggestion2" role="option">Suggestion 2</li>
+</ul>
+
+<!-- TABLIST WITH aria-orientation -->
+<div role="tablist" aria-label="Sample Tabs" aria-orientation="horizontal" class="tabs">
+    <button role="tab" aria-controls="tab1" aria-selected="true" onclick="switchTab(1)">Tab 1</button>
+    <button role="tab" aria-controls="tab2" aria-selected="false" onclick="switchTab(2)">Tab 2</button>
+</div>
+
+
+         <!-- FLOWTO EXAMPLE -->
+         <div id='section1' aria-flowto='section2'>
+             Section 1 Content
+         </div>
+         <div id='section2'>
+             Section 2 Content
+         </div>
+
+         <!-- AUTOCOMPLETE -->
+         <label for='search'>Search:</label>
+         <input id='search' type='text' aria-autocomplete='list' aria-activedescendant='suggestion1'>
+         <ul role='listbox'>
+             <li id='suggestion1' role='option'>Suggestion 1</li>
+             <li id='suggestion2' role='option'>Suggestion 2</li>
+         </ul>
+
+     </main >
+
+     <!-- JavaScript Section -->
+     <script>
+         function toggleButton(button) {
+             const isPressed = button.getAttribute('aria-pressed') === 'true';
+             button.setAttribute('aria-pressed', !isPressed);
+             const alertMessage = document.getElementById('alertMessage');
+             alertMessage.classList.remove('hidden');
+             setTimeout(() => alertMessage.classList.add('hidden'), 3000);
+         }
+
+         function openModal() {
+             document.getElementById('overlay').classList.remove('hidden');
+             const modal = document.getElementById('modal');
+             modal.classList.remove('hidden');
+             modal.focus();
+         }
+
+         function closeModal() {
+             document.getElementById('overlay').classList.add('hidden');
+             const modal = document.getElementById('modal');
+             modal.classList.add('hidden');
+         }
+
+         function switchTab(tabNumber) {
+             document.querySelectorAll('[role=tabpanel]').forEach(tab => tab.classList.add('hidden'));
+             document.getElementById('tab' + tabNumber).classList.remove('hidden');
+
+             document.querySelectorAll('[role=tab]').forEach(tab => tab.setAttribute('aria-selected', 'false'));
+             document.querySelector('[aria-controls=tab' + tabNumber + ']').setAttribute('aria-selected', 'true');
+         }
+
+         function submitForm(event) {
+             event.preventDefault(); // Prevent the form from submitting normally
+             
+             // Validate email input
+             const emailInput = document.getElementById('email');
+             const emailError = document.getElementById('email-error');
+
+             if (!emailInput.validity.valid) {
+                 emailError.classList.remove('hidden');
+                 emailInput.setAttribute('aria-invalid', 'true');
+                 return;
+             } else {
+                 emailError.classList.add('hidden');
+                 emailInput.setAttribute('aria-invalid', 'false');
+                 // Here you would typically handle form submission
+                 console.log("Form submitted successfully!");
+                 toggleButton(document.querySelector('[aria-label=Submit Form Button]')); // Simulate button click
+             }
+         }
+
+         function showCarouselItem(itemNumber) {
+             document.querySelectorAll('[id^=carousel-item]').forEach(item => item.classList.add('hidden'));
+             document.getElementById(`carousel-item${itemNumber}`).classList.remove('hidden');
+         }
+     </script>
+
+ </body >
+ </html >
